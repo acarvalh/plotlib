@@ -67,6 +67,7 @@ def create_legend(*args, **kwargs):
 def create_legend_box(legend, pad, mode="", x1=None, x2=None, y1=None, y2=None, padding=0,
         x_padding=None, x1_padding=None, x2_padding=None, y_padding=None, y1_padding=None,
         y2_padding=None, props=None):
+    
     # determine the padding
     if x1_padding is None:
         x1_padding = padding if x_padding is None else x_padding
@@ -119,7 +120,7 @@ def create_top_left_label(text, x=None, y=None, pad=None, props=None, **kwargs):
     return label
 
 
-def create_top_right_label(text, x=None, y=None, pad=None, props=None, **kwargs):
+def create_top_right_label(text, x=None, y=None, pad=None, props=None, text_size=22, **kwargs):
     # default position
     kwargs.setdefault("x_anchor", "right")
     kwargs.setdefault("y_anchor", "top")
@@ -130,7 +131,7 @@ def create_top_right_label(text, x=None, y=None, pad=None, props=None, **kwargs)
         y = y_default
 
     # default props
-    props = merge_dicts({"TextAlign": 31}, props)
+    props = merge_dicts({"TextAlign": 31, "TextSize": text_size}, props)
 
     # create and setup the label
     label = create_object("TLatex", x, y, text)

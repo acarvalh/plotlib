@@ -394,6 +394,7 @@ def get_stable_distance(mode, distance, current=None, reference=None):
 
 def calculate_legend_coords(pad=None, x1=None, x2=None, width=None, y1=None, y2=None, height=None,
         dy=None, n=1):
+    
     # helpers to sanitize user coordinates, optionally relative to pad
     x_ = lambda x: get_x(abs(x), pad, anchor="left" if x >= 0 else "right")
     y_ = lambda y: get_y(abs(y), pad, anchor="bottom" if y >= 0 else "top")
