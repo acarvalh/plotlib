@@ -104,7 +104,8 @@ def create_top_left_label(text, x=None, y=None, pad=None, props=None, **kwargs):
     # default position
     kwargs.setdefault("x_anchor", "left")
     kwargs.setdefault("y_anchor", "top")
-    x_default, y_default = get_xy(2, -6, pad, **kwargs)
+    y_offset = -12 # -6
+    x_default, y_default = get_xy(2, y_offset, pad, **kwargs)
     if x is None:
         x = x_default
     if y is None:
@@ -121,7 +122,7 @@ def create_top_left_label(text, x=None, y=None, pad=None, props=None, **kwargs):
 
 
 def create_top_right_label(text, x=None, y=None, pad=None, props=None, text_size=22, **kwargs):
-    # default position
+    # default position 
     kwargs.setdefault("x_anchor", "right")
     kwargs.setdefault("y_anchor", "top")
     x_default, y_default = get_xy(2, -6, pad, **kwargs)
@@ -153,7 +154,7 @@ def create_cms_labels(cms="CMS", postfix="Preliminary", layout="inside_vertical"
     kwargs.setdefault("x_anchor", "left")
     kwargs.setdefault("y_anchor", "top")
     x_offset = 24 if is_inside else 2
-    y_offset = 26 if is_inside else -6
+    y_offset = 26 if is_inside else -10 # -6
     x_default, y_default = get_xy(x_offset, y_offset, pad, **kwargs)
     if x is None:
         x = x_default
